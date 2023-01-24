@@ -1,11 +1,5 @@
-//
-//  todoTCAApp.swift
-//  todoTCA
-//
-//  Created by Kohei Oyama on 2023/01/21.
-//
-
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct todoTCAApp: App {
@@ -13,8 +7,13 @@ struct todoTCAApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ListView(
+                store: Store(
+                    initialState: ListCore.State(),
+                    reducer: ListCore()
+                )
+            )
         }
     }
 }
+
