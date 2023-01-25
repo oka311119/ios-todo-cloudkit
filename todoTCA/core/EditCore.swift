@@ -1,16 +1,16 @@
 import ComposableArchitecture
 
 struct EditCore: ReducerProtocol {
-    struct State: Equtable {
+    struct State: Equatable {
         var title: String = ""
     }
 
-    struct Action: Equtable {
+    enum Action: Equatable {
         case titleChanged
         case submit
     }
 
-    func reduce(into state inout State, action: Action) -> EffectTask<Action>{
+    func reduce(into state: inout State, action: Action) -> EffectTask<Action>{
         switch action {
         case .titleChanged:
             return .none

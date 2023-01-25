@@ -2,10 +2,10 @@ import Foundation
 import ComposableArchitecture
 
 struct TodoClient {
-    fetch: () async -> [Todo]
+    var fetch: () async -> [Todo]
 }
 
-struct TodoClient: DependencyKey {
+extension TodoClient: DependencyKey {
     static let liveValue = Self(
         fetch: {
             return Todo.mock
@@ -13,7 +13,7 @@ struct TodoClient: DependencyKey {
     )
 }
 
-struct DependencyValues {
+extension DependencyValues {
     var todoClient: TodoClient {
         get { self[TodoClient.self] }
         set { self[TodoClient.self] = newValue }

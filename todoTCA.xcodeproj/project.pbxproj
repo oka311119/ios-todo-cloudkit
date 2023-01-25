@@ -96,9 +96,7 @@
 				EF099E14297BAB1200FE6FFC /* Persistence.swift */,
 				EF099E19297BAB1200FE6FFC /* ContentView.swift */,
 				EF099E1B297BAB1300FE6FFC /* Assets.xcassets */,
-				EF099E1D297BAB1300FE6FFC /* todoTCA.entitlements */,
 				EF099E16297BAB1200FE6FFC /* todoTCA.xcdatamodeld */,
-				EF099E1E297BAB1300FE6FFC /* Preview Content */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -160,6 +158,8 @@
 		EF099E11297BAB1200FE6FFC /* todoTCA */ = {
 			isa = PBXGroup;
 			children = (
+				EF099E1E297BAB1300FE6FFC /* Preview Content */,
+				EF099E1D297BAB1300FE6FFC /* todoTCA.entitlements */,
 				6B92323B297F58E700903F15 /* core */,
 				6B92323A297F58DC00903F15 /* view */,
 				6B923239297F58D500903F15 /* repository */,
