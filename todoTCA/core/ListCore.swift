@@ -2,14 +2,14 @@ import ComposableArchitecture
 
 struct ListCore: ReducerProtocol {
 	struct State: Equatable {
-        var todos: [Todo] = []
-        var edit: Todo?
+        var todos: [TodoEntity] = []
+        var edit: TodoEntity?
     }
 
     enum Action: Equatable {
         case fetch
-        case fetchDataResponse(TaskResult<[Todo]>)
-        case translate(Todo)
+        case fetchDataResponse(TaskResult<[TodoEntity]>)
+        case translate(TodoEntity)
     }
 
     @Dependency(\.todoClient) var todoClient
