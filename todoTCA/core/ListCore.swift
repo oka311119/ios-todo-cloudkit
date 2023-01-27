@@ -1,3 +1,4 @@
+import Foundation
 import ComposableArchitecture
 
 struct ListCore: ReducerProtocol {
@@ -9,7 +10,8 @@ struct ListCore: ReducerProtocol {
     enum Action: Equatable {
         case fetch
         case fetchDataResponse(TaskResult<[TodoEntity]>)
-        case translate(TodoEntity)
+        case transition(UUID)
+        case addButtonTapped
     }
 
     @Dependency(\.todoClient) var todoClient
@@ -32,9 +34,15 @@ struct ListCore: ReducerProtocol {
             print(error)
             return .none
 
-        case .translate(let todo):
+        case .transition(let id):
+            guard let todo = state.todos.first(where: { $0.id == id }) else { return .none }
             state.edit = todo
             return .none
+            
+        case .addButtonTapped:
+            print("add button tapped!")
+            todoClient.create()
+            return Effect(value: .fetch)
         }
     }
 }

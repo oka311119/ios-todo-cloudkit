@@ -12,6 +12,10 @@ struct ListView: View {
             .onAppear {
                 viewStore.send(.fetch)
             }
+            
+            Button(action: { viewStore.send(.addButtonTapped) }) {
+                Text("add todo 🥴")
+            }
         }
     }
 }

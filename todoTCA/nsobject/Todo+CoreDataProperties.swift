@@ -18,12 +18,18 @@ extension Todo {
 
     @NSManaged public var title: String?
     @NSManaged public var note: String?
-
-    func convertedToEntity() -> TodoEntity? {
-        TodoEntity.init?(title: title)
-    }
 }
 
 extension Todo : Identifiable {
 
+}
+
+extension Todo: Mappable {
+    func convertedToEntity() -> TodoEntity? {
+        guard let title = title else {
+            assertionFailure()
+            return nil
+        }
+        return TodoEntity(title: title)
+    }
 }

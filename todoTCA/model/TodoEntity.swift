@@ -1,14 +1,8 @@
 import Foundation
 
-struct TodoEntity: Identifiable, Equatable {
+struct TodoEntity: IEntity {
     let id = UUID()
     let title: String
-    
-    init?(title: String?) {
-        if title == nil {
-            return nil
-        }
-    }
 }
 
 extension TodoEntity {

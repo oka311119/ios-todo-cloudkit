@@ -16,8 +16,10 @@
 		6B923247297F598800903F15 /* TodoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B923246297F598800903F15 /* TodoEntity.swift */; };
 		6BAE249D29820BB20072F782 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE249B29820BB20072F782 /* Todo+CoreDataClass.swift */; };
 		6BAE249E29820BB20072F782 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE249C29820BB20072F782 /* Todo+CoreDataProperties.swift */; };
+		6BAE24A1298343B10072F782 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE24A0298343B10072F782 /* Mappable.swift */; };
+		6BAE24A32983511F0072F782 /* TodoDataAccesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE24A22983511F0072F782 /* TodoDataAccesser.swift */; };
 		EF099E13297BAB1200FE6FFC /* todoTCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF099E12297BAB1200FE6FFC /* todoTCAApp.swift */; };
-		EF099E15297BAB1200FE6FFC /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF099E14297BAB1200FE6FFC /* Persistence.swift */; };
+		EF099E15297BAB1200FE6FFC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF099E14297BAB1200FE6FFC /* PersistenceController.swift */; };
 		EF099E18297BAB1200FE6FFC /* todoTCA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF099E16297BAB1200FE6FFC /* todoTCA.xcdatamodeld */; };
 		EF099E1A297BAB1200FE6FFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF099E19297BAB1200FE6FFC /* ContentView.swift */; };
 		EF099E1C297BAB1300FE6FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF099E1B297BAB1300FE6FFC /* Assets.xcassets */; };
@@ -53,9 +55,11 @@
 		6B923246297F598800903F15 /* TodoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEntity.swift; sourceTree = "<group>"; };
 		6BAE249B29820BB20072F782 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6BAE249C29820BB20072F782 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6BAE24A0298343B10072F782 /* Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
+		6BAE24A22983511F0072F782 /* TodoDataAccesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataAccesser.swift; sourceTree = "<group>"; };
 		EF099E0F297BAB1200FE6FFC /* todoTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF099E12297BAB1200FE6FFC /* todoTCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoTCAApp.swift; sourceTree = "<group>"; };
-		EF099E14297BAB1200FE6FFC /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		EF099E14297BAB1200FE6FFC /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		EF099E17297BAB1200FE6FFC /* todoTCA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = todoTCA.xcdatamodel; sourceTree = "<group>"; };
 		EF099E19297BAB1200FE6FFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EF099E1B297BAB1300FE6FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +101,7 @@
 		6B923237297F58B600903F15 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				EF099E14297BAB1200FE6FFC /* Persistence.swift */,
+				EF099E14297BAB1200FE6FFC /* PersistenceController.swift */,
 				EF099E19297BAB1200FE6FFC /* ContentView.swift */,
 				EF099E1B297BAB1300FE6FFC /* Assets.xcassets */,
 				EF099E16297BAB1200FE6FFC /* todoTCA.xcdatamodeld */,
@@ -109,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				6B923246297F598800903F15 /* TodoEntity.swift */,
+				6BAE24A0298343B10072F782 /* Mappable.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				6B923244297F598000903F15 /* TodoClient.swift */,
+				6BAE24A22983511F0072F782 /* TodoDataAccesser.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -347,13 +353,15 @@
 			files = (
 				6B92323F297F596A00903F15 /* EditCore.swift in Sources */,
 				6B923245297F598000903F15 /* TodoClient.swift in Sources */,
+				6BAE24A32983511F0072F782 /* TodoDataAccesser.swift in Sources */,
 				EF099E13297BAB1200FE6FFC /* todoTCAApp.swift in Sources */,
 				6BAE249D29820BB20072F782 /* Todo+CoreDataClass.swift in Sources */,
 				6B923243297F597800903F15 /* EditView.swift in Sources */,
 				6BAE249E29820BB20072F782 /* Todo+CoreDataProperties.swift in Sources */,
 				6B92323D297F595700903F15 /* ListCore.swift in Sources */,
+				6BAE24A1298343B10072F782 /* Mappable.swift in Sources */,
 				6B923241297F597100903F15 /* ListView.swift in Sources */,
-				EF099E15297BAB1200FE6FFC /* Persistence.swift in Sources */,
+				EF099E15297BAB1200FE6FFC /* PersistenceController.swift in Sources */,
 				EF099E1A297BAB1200FE6FFC /* ContentView.swift in Sources */,
 				EF099E18297BAB1200FE6FFC /* todoTCA.xcdatamodeld in Sources */,
 				6B923247297F598800903F15 /* TodoEntity.swift in Sources */,
